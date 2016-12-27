@@ -17,6 +17,10 @@ class CreateRegionsTable extends Migration
             $table->increments('id');
             $table->string('abbreviation');
             $table->string('name');
+            $table->string('capital');
+            $table->bigInteger('population');
+            $table->float('population_density');
+            $table->integer('area');
             $table->timestamps();
         });
     }

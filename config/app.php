@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'Namibian Data API',
 
     /*
     |--------------------------------------------------------------------------
@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY','base64:Ol9P3rN8FBnQXxv0OSp8D8E0nb6bJwxwcKqIBoDAwLo='),
 
     'cipher' => 'AES-256-CBC',
 

@@ -21,7 +21,7 @@ class RegionController extends Controller
             return response(
                 [
                     'data' => [
-                        'regions' => $regions
+                        'regions' => $regions,
                     ],
                 ],
                 200)->header('Content-Type', 'application/vnd.api+json');
@@ -30,7 +30,7 @@ class RegionController extends Controller
         return response(
             [
                 'errors' => [
-                    'regions' => 'No data found'
+                    'regions' => 'No data found',
                 ],
             ],
             404)->header('Content-Type', 'application/vnd.api+json');
@@ -49,24 +49,25 @@ class RegionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255|unique:regions',
-            'abbreviation' => 'required|max:255|unique:regions',
-            'population' => 'required',
-            'area' => 'required',
-            'capital' => 'required',
+            'name'               => 'required|max:255|unique:regions',
+            'abbreviation'       => 'required|max:255|unique:regions',
+            'population'         => 'required',
+            'area'               => 'required',
+            'capital'            => 'required',
             'population_density' => 'required',
         ]);
 
-        if($validator->fails()){
+        if ($validator->fails()) {
             return response([
                 'errors' => $validator->errors(),
-            ],400
+            ], 400
             )->header('Content-Type', 'application/vnd.api+json');
         }
 
@@ -82,7 +83,7 @@ class RegionController extends Controller
         return response(
             [
                 'data' => [
-                    'region' => $region
+                    'region' => $region,
                 ],
             ],
             201
@@ -92,11 +93,11 @@ class RegionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public
-    function show($id)
+    public function show($id)
     {
         //
     }
@@ -104,11 +105,11 @@ class RegionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public
-    function edit($id)
+    public function edit($id)
     {
         //
     }
@@ -116,12 +117,12 @@ class RegionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public
-    function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -129,11 +130,11 @@ class RegionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public
-    function destroy($id)
+    public function destroy($id)
     {
         //
     }

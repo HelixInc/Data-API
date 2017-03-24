@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 | Version 1 (v1)
 */
 Route::group(['prefix' => 'v1'], function () {
-
     Route::get('/user', function (Request $request) {
         return $request->user();
     })->middleware('auth:api');
